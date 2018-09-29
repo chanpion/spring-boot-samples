@@ -1,0 +1,30 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: quartz
+  aop:
+    auto: true
+    proxy-target-class: true
+  quartz:
+    job-store-type: jdbc
+    jdbc:
+      initialize-schema: always
+    properties:
+      org:
+        quartz:
+          scheduler:
+            instanceName: clusterScheduler
+            instanceId: AUTO
+            isClustered: true
+          threadPool:
+            class: org.quartz.simpl.SimpleThreadPool
+            threadCount: 10
+            threadPriority: 5
+          jobStore:
+            class: com.novemberain.quartz.mongodb.MongoDBJobStore
+            mongoUri: mongodb://127.0.0.1:27017/?authSource=admin&connectTimeoutMS=1000&socketTimeoutMS=5000&maxIdleTimeMS=60000&wtimeoutMS=3000
+            dbName: dc_quartz
+            collectionPrefix: qrtz
+            isClustered: true
+
