@@ -6,12 +6,15 @@ spring:
     name: tkmybatis-demo
   datasource:
     druid:
-      url: jdbc:mysql://10.58.11.13:3370/yuntu_340_2316?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&connectTimeout=5000&socketTimeout=5000&autoReconnect=true&maxReconnects=5&failOverReadOnly=false&zeroDateTimeBehavior=convertToNull&&useSSL=false
+      url: jdbc:mysql://10.58.11.13:3370/yuntu_340_2316?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&connectTimeout=5000&socketTimeout=5000&autoReconnect=true&maxReconnects=5&failOverReadOnly=false&zeroDateTimeBehavior=convertToNull&&useSSL=false
       driver-class-name: com.mysql.jdbc.Driver
       username: yuntu
       password: yuntu
       initial-size: 1
       max-active: 10
+  jackson:
+    date-format: "yyyy-MM-dd HH:mm:ss"
+    time-zone: GMT+8
 
 mapper:
   mappers:
@@ -20,7 +23,7 @@ mapper:
   notEmpty: true
 
 mybatis:
-#  configLocation: classpath:mybatis-config.xml
+  #  configLocation: classpath:mybatis-config.xml
   mapperLocations: classpath:mapper/*.xml
 
 logging:
