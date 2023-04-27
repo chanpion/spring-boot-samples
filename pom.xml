@@ -11,6 +11,7 @@
     <modules>
         <module>quartz</module>
         <module>tkmybatis</module>
+        <module>mybatis-plus</module>
     </modules>
 
     <properties>
@@ -25,6 +26,11 @@
                 <version>${spring-boot.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>1.2.17</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
