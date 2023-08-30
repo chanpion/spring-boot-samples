@@ -12,6 +12,7 @@
         <module>quartz</module>
         <module>tkmybatis</module>
         <module>mybatis-plus</module>
+        <module>mybatis-flex</module>
     </modules>
 
     <properties>
