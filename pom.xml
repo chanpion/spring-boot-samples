@@ -13,10 +13,14 @@
         <module>tkmybatis</module>
         <module>mybatis-plus</module>
         <module>mybatis-flex</module>
+        <module>validation</module>
+        <module>i18n</module>
+        <module>docker-ops</module>
+        <module>docker-starter</module>
     </modules>
 
     <properties>
-        <spring-boot.version>2.6.4</spring-boot.version>
+        <spring-boot.version>2.7.12</spring-boot.version>
     </properties>
 
     <dependencyManagement>
@@ -36,6 +40,17 @@
         </dependencies>
     </dependencyManagement>
 
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <version>${spring-boot.version}</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
     <repositories>
         <repository>
             <id>spring-milestones</id>
