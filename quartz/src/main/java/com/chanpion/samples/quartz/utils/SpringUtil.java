@@ -9,12 +9,15 @@ import org.springframework.stereotype.Component;
 
 import java.util.Map;
 
+/**
+ * @author April.Chen
+ */
 @Component
 public class SpringUtil implements ApplicationContextAware {
     private static ApplicationContext applicationContext;
     private static DefaultListableBeanFactory beanFactory;
 
-    //    @Override
+    @Override
     public void setApplicationContext(ApplicationContext context) throws BeansException {
         applicationContext = context;
         beanFactory = (DefaultListableBeanFactory) applicationContext.getAutowireCapableBeanFactory();

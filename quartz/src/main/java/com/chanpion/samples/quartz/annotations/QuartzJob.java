@@ -4,6 +4,8 @@ import java.lang.annotation.*;
 
 /**
  * 定时任务注解
+ *
+ * @author April.Chen
  */
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)

@@ -17,6 +17,9 @@
         <module>i18n</module>
         <module>docker-ops</module>
         <module>docker-starter</module>
+        <module>jpa</module>
+        <module>cassandra</module>
+        <module>common</module>
     </modules>
 
     <properties>

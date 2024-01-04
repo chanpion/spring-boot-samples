@@ -1,0 +1,16 @@
+server:
+  port: 18080
+
+spring:
+  data:
+    cassandra:
+      contact-points: 10.58.12.60
+      port: 9042
+#      username: admin
+#      password: admin
+      keyspace-name: test
+      local-datacenter: datacenter1
+      session-name: cassandra-demo
+      schema-action: create_if_not_exists
+
+
