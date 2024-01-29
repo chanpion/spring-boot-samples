@@ -1,0 +1,61 @@
+<assembly xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/2.2.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/2.2.0 https://maven.apache.org/xsd/assembly-2.2.0.xsd">
+
+    <id>bundle</id>
+    <formats>
+        <!--指定打包类型: zip、tar、tar.gz(or tgz)、tar.bz2 (or tbz2)、tar.snappy 、tar.xz (or txz)、jar、dir、war-->
+        <format>tar.gz</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
+
+    <fileSets>
+        <!-- 启停脚本 -->
+        <fileSet>
+            <directory>${basedir}/bin</directory>
+            <includes>
+                <include>*.sh</include>
+            </includes>
+            <outputDirectory>${file.separator}bin</outputDirectory>
+        </fileSet>
+        <fileSet>
+            <directory>src/main/resources</directory>
+            <outputDirectory>conf</outputDirectory>
+            <includes>
+                <include>**/*.xml</include>
+                <include>**/*.properties</include>
+                <include>**/*.yml</include>
+            </includes>
+            <excludes>
+                <exclude>assembly.xml</exclude>
+            </excludes>
+        </fileSet>
+    </fileSets>
+
+    <!--用来定制工程依赖 jar 包的打包方式-->
+    <dependencySets>
+
+        <dependencySet>
+            <!--  当前工程的依赖和工程本身生成的jar都会被打包进来。如果要排除工程自身生成的jar，useProjectArtifact 设定为 false-->
+            <useProjectArtifact>false</useProjectArtifact>
+            <!--设置相对于程序集根目录根目录的输出目录-->
+            <outputDirectory>libs</outputDirectory>
+            <!--默认级别-->
+            <!--将scope为runtime的依赖包打包-->
+            <scope>runtime</scope>
+            <excludes>
+                <exclude>${project.groupId}:${project.artifactId}</exclude>
+            </excludes>
+        </dependencySet>
+        <!--        自己代码对应的 jar 包-->
+        <dependencySet>
+            <!--输出路径-->
+            <outputDirectory>/</outputDirectory>
+            <includes>
+                <include>${project.groupId}:${project.artifactId}</include>
+            </includes>
+        </dependencySet>
+    </dependencySets>
+
+
+</assembly>
