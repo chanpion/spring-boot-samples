@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <parent>
+        <groupId>com.chenpp.samples</groupId>
+        <artifactId>pf4j-demo-plugins</artifactId>
+        <version>1.0.0</version>
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>pf4j-demo-welcome</artifactId>
+    <version>1.0.0</version>
+    <packaging>jar</packaging>
+    <name>Welcom Plugin</name>
+
+    <properties>
+        <plugin.id>welcome-plugin</plugin.id>
+        <plugin.class>com.chenpp.samples.pf4j.demo.welcome.WelcomePlugin</plugin.class>
+        <plugin.version>1.0.0</plugin.version>
+        <plugin.provider/>
+        <plugin.dependencies/>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.chenpp.samples</groupId>
+            <artifactId>pf4j-demo-api</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+        </dependency>
+    </dependencies>
+
+</project>

@@ -1,0 +1,25 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.chenpp.samples</groupId>
+        <artifactId>pf4j</artifactId>
+        <version>1.0.0</version>
+    </parent>
+
+    <artifactId>pf4j-demo</artifactId>
+    <packaging>pom</packaging>
+
+    <name>pf4j-demo</name>
+
+    <modules>
+        <module>pf4j-demo-api</module>
+        <module>pf4j-demo-plugins</module>
+        <module>pf4j-demo-app</module>
+        <module>pf4j-demo-spring</module>
+    </modules>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+</project>
