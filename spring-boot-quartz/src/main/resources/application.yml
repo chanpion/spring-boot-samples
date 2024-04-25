@@ -1,0 +1,15 @@
+server:
+  port: 8090
+
+spring:
+  task:
+    execution:
+      pool:
+        core-size: 10
+    scheduling:
+      pool:
+        size: 10
+  profiles:
+    active: h2
+  main:
+    allow-circular-references: true
