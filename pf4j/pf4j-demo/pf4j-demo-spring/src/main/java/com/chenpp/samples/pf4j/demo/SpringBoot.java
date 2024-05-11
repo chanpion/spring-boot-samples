@@ -41,5 +41,9 @@ public class SpringBoot implements CommandLineRunner {
         List<Greeting> greetingList = pluginManager.getExtensions(Greeting.class);
         System.out.println("greetings.size() = " + greetingList.size());
         greetingList.forEach(Greeting::getGreeting);
+        for (Greeting extension : greetingList) {
+            System.out.println("   " + extension.getClass().getName());
+
+        }
     }
 }
