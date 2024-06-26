@@ -1,0 +1,27 @@
+server:
+  port: 8001
+
+spring:
+  application:
+    name: spring-boot-admin
+  profiles:
+    include: h2
+  jackson:
+    date-format: yyyy-MM-dd
+    time-zone: GMT+8
+  elasticsearch:
+#    uris: http://localhost:9200
+    uris: http://10.57.36.17:9200,http://10.57.36.18:9200,http://10.57.36.19:9200
+    prefix: /spider_media
+  main:
+    allow-bean-definition-overriding: true
+    allow-circular-references: true
+
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
